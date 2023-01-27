@@ -1,5 +1,6 @@
-package com.example.model.entities;
+package com.api.model.dao;
 
+import com.api.model.entities.PriceDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,12 +11,12 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "price")
+@Table(name = "Prices")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Price implements Serializable {
+public class Price extends PriceDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
