@@ -1,8 +1,6 @@
 # Api Rest E-Commerce H2 Spring Boot
 
-_Se expone una api rest que consulta a la base de datos en memoria (H2) el producto con mejor tarifa_
-_Swwager API_
-Para realizar pruebas sobre la API hacer click en el siguiente enlance [Swwager UI](localhost:8080/swagger-ui/index.html).
+_Se expone una api rest que consulta a la base de datos en memoria (H2) el producto con mejor tarifa. Para realizar pruebas sobre la API hacer click en el siguiente enlance [Swwager UI](http://localhost:8080/swagger-ui/index.html)._
 
 ## Comenzando 🚀
 
