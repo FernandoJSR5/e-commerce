@@ -25,7 +25,7 @@ public class PriceDetailDTO {
         this.startDate =  builder.startDate;
         this.endDate = builder.endDate;
         this.price = builder.price;
-    };
+    }
 
     public static class Builder {
         private long productId;

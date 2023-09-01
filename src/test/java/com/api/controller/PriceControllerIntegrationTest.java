@@ -38,7 +38,7 @@ class PriceControllerIntegrationTest {
     @Test
     @DisplayName("[Test 1]: Should be return a product with price 35.50 €")
     void test1() throws  Exception {
-        mockMvc.perform(get("/api/price").param("date", "2020-06-14 10:00:00")
+        mockMvc.perform(get("/api/price").param("date", "2020-06-14T10:00:00")
                         .param("product_id", "35455").param("brand_id","1")
                         .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -54,7 +54,7 @@ class PriceControllerIntegrationTest {
     @Test
     @DisplayName("[Test 2]: Should be return a product with price 25.45 €")
     void test2() throws  Exception {
-        mockMvc.perform(get("/api/price").param("date", "2020-06-14 16:00:00")
+        mockMvc.perform(get("/api/price").param("date", "2020-06-14T16:00:00")
                         .param("product_id", "35455").param("brand_id","1")
                         .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -70,7 +70,7 @@ class PriceControllerIntegrationTest {
     @Test
     @DisplayName("[Test 3]: Should be return a product with price 35.50 €")
     void test3() throws  Exception {
-        mockMvc.perform(get("/api/price").param("date", "2020-06-14 21:00:00")
+        mockMvc.perform(get("/api/price").param("date", "2020-06-14T21:00:00")
                         .param("product_id", "35455").param("brand_id","1")
                         .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -86,7 +86,7 @@ class PriceControllerIntegrationTest {
     @Test
     @DisplayName("[Test 4]: Should be return a product with price 30.50 €")
     void test4() throws  Exception {
-        mockMvc.perform(get("/api/price").param("date", "2020-06-15 10:00:00")
+        mockMvc.perform(get("/api/price").param("date", "2020-06-15T10:00:00")
                         .param("product_id", "35455").param("brand_id","1")
                         .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -102,7 +102,7 @@ class PriceControllerIntegrationTest {
     @Test
     @DisplayName("[Test 5]: Should be return a product with price 38.95 €")
     void test5() throws  Exception {
-        mockMvc.perform(get("/api/price").param("date", "2020-06-16 21:00:00")
+        mockMvc.perform(get("/api/price").param("date", "2020-06-16T21:00:00")
                 .param("product_id", "35455").param("brand_id","1")
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))

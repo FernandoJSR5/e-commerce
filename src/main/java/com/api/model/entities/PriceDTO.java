@@ -17,6 +17,7 @@ public class PriceDTO {
     private LocalDateTime endDate;
 
     private int priceList;
+
     private long productId;
 
     private int priority;
@@ -35,7 +36,7 @@ public class PriceDTO {
         this.price = builder.price;
         this.priority = builder.priority;
         this.curr = builder.curr;
-    };
+    }
 
     public static class Builder {
         private long id;

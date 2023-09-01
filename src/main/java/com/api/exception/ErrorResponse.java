@@ -4,25 +4,25 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.http.HttpStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 import java.time.LocalDateTime;
 
 
 @Data
 @AllArgsConstructor
-public class ErrorResponse extends RuntimeException{
+@ResponseStatus(code = HttpStatus.NOT_FOUND)
+public class ErrorResponse extends RuntimeException {
 
-    private HttpStatus status;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime timeStamp;
     private String message;
+    private  String details;
 
-    public ErrorResponse(HttpStatus status, String message) {
-        this();
-        this.status = status;
+    public ErrorResponse(String message) {
+        super();
         this.message = message;
+        this.timeStamp = LocalDateTime.now();
     }
 
-    public ErrorResponse() {
-        timeStamp = LocalDateTime.now();
-    }
 }

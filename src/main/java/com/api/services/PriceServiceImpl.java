@@ -1,12 +1,10 @@
 package com.api.services;
 
 import com.api.exception.ErrorResponse;
-import com.api.model.dao.Price;
 import com.api.model.entities.PriceDTO;
 import com.api.model.entities.PriceDetailDTO;
 import com.api.model.dao.IPrice;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -29,7 +27,7 @@ public class PriceServiceImpl {
         List<PriceDTO> prices = priceDao.findPrices(date, productId, brandId);
 
         PriceDTO price = prices.stream().max(Comparator.comparing(PriceDTO::getPriority))
-                .orElseThrow(() -> new ErrorResponse(HttpStatus.NOT_FOUND, "The record for prices are not existent"));
+                .orElseThrow(() -> new ErrorResponse("The record for prices does not exist"));
         PriceDetailDTO detail = new PriceDetailDTO.Builder().productId(price.getProductId()).brandId(price.getBrandId())
                 .priceList(price.getPriceList()).startDate(price.getStartDate()).endDate(price.getEndDate())
                 .price(price.getPrice()).build();

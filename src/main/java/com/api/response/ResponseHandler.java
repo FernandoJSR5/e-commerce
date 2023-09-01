@@ -24,13 +24,4 @@ public class ResponseHandler {
 
         return new ResponseEntity<>(response, httpStatus);
     }
-
-    public static ResponseEntity<Object> responseBuilder(String message, HttpStatus httpStatus, LocalDateTime timeStamp) {
-        Map<String, Object> response = new HashMap<>();
-        response.put("message", message);
-        response.put("status", httpStatus);
-        response.put("timeStamp", timeStamp);
-
-        return new ResponseEntity<>(response, httpStatus);
-    }
 }
